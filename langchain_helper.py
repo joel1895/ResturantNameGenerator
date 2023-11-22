@@ -4,8 +4,9 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 from secret_key import openAI_key
+import st
 
-os.environ['OPENAI_API_KEY'] = openAI_key
+os.environ['OPENAI_API_KEY'] = st.secrets["OPENAI_API_KEY"]
 
 
 llm = OpenAI(temperature=0.7) #temperature,how creative your model to be. ranges b/w 0 and 1. 0 not risky,very simple...1 risky and very creative
